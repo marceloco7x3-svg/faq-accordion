@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Work Sans";
+  src: url("./images/WorkSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --purple-950: hsl(292, 42%, 14%);
+  --purple-600: hsl(292, 16%, 49%);
+  --purple-100: hsl(275, 100%, 97%);
+  --purple-600-bright: hsl(281, 83%, 54%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    url("./images/background-pattern-desktop.svg") top center / 100% auto no-repeat,
+    var(--purple-100);
+  color: var(--purple-950);
+  font-family: "Work Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 168px 24px 32px;
+}
+
+.faq-card {
+  width: min(600px, 100%);
+  padding: 38px 40px 18px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 28px 55px rgba(50, 0, 60, 0.12);
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0 0 22px;
+  font-size: 56px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+h1 img {
+  width: 40px;
+  height: 40px;
+}
+
+details {
+  border-bottom: 1px solid hsl(275, 20%, 94%);
+  padding: 0;
+}
+
+details:last-child {
+  border-bottom: 0;
+}
+
+summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 24px 52px 24px 0;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::marker {
+  display: none;
+}
+
+summary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+  background: url("./images/icon-plus.svg") center / contain no-repeat;
+}
+
+details[open] summary::after {
+  background-image: url("./images/icon-minus.svg");
+}
+
+summary:hover {
+  color: var(--purple-600-bright);
+}
+
+details p {
+  margin: -4px 0 22px;
+  color: var(--purple-600);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.attribution {
+  margin-top: 22px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: url("./images/background-pattern-mobile.svg");
+    padding: 142px 24px 24px;
+  }
+
+  .faq-card {
+    padding: 24px 24px 8px;
+    border-radius: 8px;
+  }
+
+  h1 {
+    gap: 20px;
+    margin-bottom: 12px;
+    font-size: 32px;
+  }
+
+  h1 img {
+    width: 24px;
+    height: 24px;
+  }
+
+  summary {
+    padding: 20px 45px 20px 0;
+    font-size: 16px;
+  }
+
+  summary::after {
+    width: 24px;
+    height: 24px;
+  }
+
+  details p {
+    margin-top: -2px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
